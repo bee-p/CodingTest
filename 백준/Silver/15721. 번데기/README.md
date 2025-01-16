@@ -22,7 +22,7 @@
 
 <p>일구와 동기들, 그리고 선배들을 포함한 사람 A명이 다음과 같이 원으로 앉아 있다고 가정하자. </p>
 
-<p style="text-align: center;"><img alt="" src="" style="width: 227px; height: 197px;"></p>
+<p style="text-align: center;"><img alt="" src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/problem/15721/1.png" style="width: 227px; height: 197px;"></p>
 
 <p>일구가 0번째이고, 반 시계 방향으로 번데기 게임을 진행한다. T번째 ‘뻔’ 또는 ‘데기’를 외치는 사람은 위 원에서 몇 번 사람인지를 구하여라. (새내기는 10000번째가 되는 순간 시체방에 가기 때문에 T는 10000이하의 임의의 자연수이다.)</p>
 
