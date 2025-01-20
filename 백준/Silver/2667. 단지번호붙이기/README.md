@@ -18,7 +18,7 @@
 
 <p><그림 1>과 같이 정사각형 모양의 지도가 있다. 1은 집이 있는 곳을, 0은 집이 없는 곳을 나타낸다. 철수는 이 지도를 가지고 연결된 집의 모임인 단지를 정의하고, 단지에 번호를 붙이려 한다. 여기서 연결되었다는 것은 어떤 집이 좌우, 혹은 아래위로 다른 집이 있는 경우를 말한다. 대각선상에 집이 있는 경우는 연결된 것이 아니다. <그림 2>는 <그림 1>을 단지별로 번호를 붙인 것이다. 지도를 입력하여 단지수를 출력하고, 각 단지에 속하는 집의 수를 오름차순으로 정렬하여 출력하는 프로그램을 작성하시오.</p>
 
-<p style="text-align: center;"><img alt="" src="https://www.acmicpc.net/upload/images/ITVH9w1Gf6eCRdThfkegBUSOKd.png" style="height:192px; width:409px"></p>
+<p style="text-align: center;"><img alt="" src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/upload/images/ITVH9w1Gf6eCRdThfkegBUSOKd.png" style="height:192px; width:409px"></p>
 
 ### 입력 
 
@@ -28,3 +28,12 @@
 
  <p>첫 번째 줄에는 총 단지수를 출력하시오. 그리고 각 단지내 집의 수를 오름차순으로 정렬하여 한 줄에 하나씩 출력하시오.</p>
 
+***
+
+### 접근 방법
+- 간단하게 코드를 작성하기 위해 DFS로 구현했다.
+- 답으로 출력하는 것은 단지의 수와 단지 내 집 수이므로, 집을 발견하면 dfs를 시작하도록 구성했다.
+  - 그리고 dfs 시작 직전에는 단지 내 집 수를 초기화 시키고, dfs를 도는 동안 이 집의 개수를 카운트하는 방식으로 구현했다.
+  - 해당 단지의 탐색이 끝나면 이때까지 카운트한 집의 개수를 `homeCountArr`에 추가한 뒤,<br>
+    이 `homeCountArr`의 사이즈를 단지의 개수, `homeCountArr` 내의 값들을 단지 내 집 개수로 활용했다.
+  - 또한 맵을 다시 그려서 출력할 일은 없으므로, 집을 찾으면 해당 위치의 집은 제거해 탐색했음을 표시했다.
