@@ -3,7 +3,9 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -14,12 +16,12 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
 
         // 데이터 입력받기
-        int[] arr = new int[n];
+        List<Integer> arr = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            arr[i] = Integer.parseInt(br.readLine());
+            arr.add(Integer.parseInt(br.readLine()));
         }
 
-        Arrays.sort(arr);
+        Collections.sort(arr);
 
         for (int data : arr) {
             bw.write(data + "\n");
