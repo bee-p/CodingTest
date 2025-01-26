@@ -64,3 +64,8 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+
+***
+
+### 접근 방법
+- stream을 통해 정렬하는 것은 참조 값이 전달되는 것이 아니므로, 이를 이용해 각 범위를 정렬해 저장했다.
