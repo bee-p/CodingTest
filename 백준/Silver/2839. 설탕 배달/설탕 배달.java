@@ -4,29 +4,23 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // 데이터 입력 받기
+        // 데이터 입력받기
         int n = sc.nextInt();
+        int maxFive = n / 5; // 5kg 봉지를 최대한 많이 사용하도록 함
 
-        int count = 0;
-
-        while (n > 0) {
-            if (n % 5 == 0) {
-                n -= 5;
-            } else if (n % 3 == 0) {
-                n -= 3;
-            } else if (n >= 5) {
-                n -= 5;
-            } else {
-                n -= 3;
+        while (maxFive >= 0) {
+            // 남은 무게가 3kg으로 나누어떨어지는지 확인
+            int remaining = n - (maxFive * 5);
+            // 정확하게 다 사용했다면 결과 출력
+            if (remaining % 3 == 0){
+                int count = maxFive + (remaining / 3);
+                System.out.println(count);
+                return;
             }
-            count++;
+            // 5kg 봉지 개수를 줄여가며 탐색
+            maxFive--;
         }
 
-        // 결과 출력
-        if (n == 0) {
-            System.out.println(count);
-        } else {
-            System.out.println(-1);
-        }
+        System.out.println(-1); // 정확히 나눌 수 없는 경우
     }
 }
