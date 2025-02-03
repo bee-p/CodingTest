@@ -21,6 +21,7 @@ public class Main {
             maxFive--;
         }
 
-        System.out.println(-1); // 정확히 나눌 수 없는 경우
+        // 정확히 나눌 수 없는 경우
+        System.out.println(-1);
     }
 }
