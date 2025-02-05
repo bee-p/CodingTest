@@ -1,6 +1,8 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Arrays;
 
 public class Main {
@@ -8,6 +10,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         // 데이터 입력받기
         int n = Integer.parseInt(br.readLine());
@@ -26,11 +29,14 @@ public class Main {
             int result = binarySearch(targetList[i], 0, n - 1);
 
             if (result != -1) {
-                System.out.print("1 ");
+                bw.write("1 ");
             } else {
-                System.out.print("0 ");
+                bw.write("0 ");
             }
         }
+
+        bw.flush();
+        bw.close();
     }
 
     static int binarySearch(int key, int start, int end) {
