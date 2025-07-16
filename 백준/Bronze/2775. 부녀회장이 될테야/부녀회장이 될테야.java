@@ -41,15 +41,26 @@ public class Main {
         }
 
         if (map[left.floor][left.roomNum] == 0) {
-            Room goLeft = new Room(left.floor, left.roomNum - 1);
-            Room goDown = new Room(down.floor, down.roomNum - 1);
-            search(goLeft, goDown);
+            left.roomNum--;
+            down.roomNum--;
+            search(left, down);
+
+            left.roomNum++;
+            down.roomNum++;
         }
 
         if (map[down.floor][down.roomNum] == 0) {
-            Room goLeft = new Room(down.floor, down.roomNum - 1);
-            Room goDown = new Room(down.floor - 1, down.roomNum);
-            search(goLeft, goDown);
+            int tempFloor = left.floor;
+            int tempRoomNum = left.roomNum;
+
+            left.floor = down.floor;
+            left.roomNum = down.roomNum - 1;
+            down.floor--;
+            search(left, down);
+
+            left.floor = tempFloor;
+            left.roomNum = tempRoomNum;
+            down.floor++;
         }
 
         map[nowFloor][nowRoomNum] = map[left.floor][left.roomNum] + map[down.floor][down.roomNum];
