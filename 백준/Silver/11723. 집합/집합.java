@@ -34,17 +34,17 @@ public class Main {
 
             num = Integer.parseInt(st.nextToken());
 
-            switch (inputStr) {
-                case "add" -> set.add(num);
-                case "remove" -> set.remove(num);
-                case "check" -> {
+            switch (inputStr.charAt(0)) {
+                case 'a' -> set.add(num);
+                case 'r' -> set.remove(num);
+                case 'c' -> {
                     if (set.contains(num)) {
                         bw.write("1\n");
                     } else {
                         bw.write("0\n");
                     }
                 }
-                case "toggle" -> {
+                case 't' -> {
                     if (!set.remove(num)) {
                         set.add(num);
                     }
