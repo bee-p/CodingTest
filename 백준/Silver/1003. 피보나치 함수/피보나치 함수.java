@@ -1,8 +1,6 @@
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 
 public class Main {
     // 행: 숫자 N
@@ -11,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         // 피보나치(0)에서 0이 한 번 출력됨을 표시
         fibonacci[0][0] = 1;
@@ -26,11 +24,10 @@ public class Main {
         for (int t = 0; t < tc; t++) {
             int n = Integer.parseInt(br.readLine());
 
-            bw.write(fibonacci[n][0] + " " + fibonacci[n][1] + "\n");
+            sb.append(fibonacci[n][0]).append(" ").append(fibonacci[n][1]).append("\n");
         }
 
-        bw.flush();
-        bw.close();
+        System.out.println(sb);
     }
 
     static void doFibonacci(int num) {
