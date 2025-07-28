@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -15,15 +15,15 @@ public class Main {
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
 
-        HashMap<String, Integer> nList = new HashMap<>();
+        HashSet<String> nList = new HashSet<>();
         for (int i = 0; i < n; i++) {
-            nList.put(br.readLine(), 0);
+            nList.add(br.readLine());
         }
 
         List<String> result = new ArrayList<>();
         for (int i = 0; i < m; i++) {
             String input = br.readLine();
-            if (nList.containsKey(input)) {
+            if (nList.contains(input)) {
                 result.add(input);
             }
         }
@@ -39,3 +39,4 @@ public class Main {
         System.out.println(sb);
     }
 }
+
