@@ -66,6 +66,8 @@ public class Main {
             }
         }
 
-        System.out.println(minTime + " " + resultH);
+        StringBuilder output = new StringBuilder();
+        output.append(minTime).append(" ").append(resultH);
+        System.out.println(output);
     }
 }
